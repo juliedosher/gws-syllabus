@@ -22,7 +22,7 @@ func main() {
 			fmt.Fprintf(w, string(syllabusStr))
 
 		} else {
-			fmt.Fprintf(w, "Syllabus with ID %v not found", id)
+			fmt.Fprintf(w, "Syllabus with ID ‘%v’ not found", id)
 		}
 	})
 
@@ -35,7 +35,7 @@ func main() {
 			fmt.Fprintf(w, string(syllabusStr))
 
 		} else {
-			fmt.Fprintf(w, "Syllabus with ID %v not found", id)
+			fmt.Fprintf(w, "Syllabus with ID ‘%v’ not found", id)
 		}
 	})
 
@@ -48,7 +48,7 @@ func main() {
 			fmt.Fprintf(w, string(syllabusStr))
 
 		} else {
-			fmt.Fprintf(w, "Syllabus with ID %v not found", id)
+			fmt.Fprintf(w, "Syllabus with ID ‘%v’ not found", id)
 		}
 	})
 
@@ -58,7 +58,7 @@ func main() {
 			fmt.Fprintf(w, "Invalid ID provided. Please enter an integer.")
 
 		} else if _, ok := getSyllabusFromId(id); ok {
-			fmt.Fprintf(w, "Syllabus with ID %v already exists", id)
+			fmt.Fprintf(w, "Syllabus with ID ‘%v’ already exists", id)
 
 		} else {
 			fmt.Fprintf(w, "Create request -- stubbed")

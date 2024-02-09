@@ -8,7 +8,8 @@ juliegdosher@lewisu.edu
 CPSC 445, Lewis University, Spring 2024  
   
 ## Build Instructions
-Clone all files into a local repository. Run "go run gws.go" in command line to run.    
+Clone all files into a local repository. Run "go run ." in command line to run.  
+Do NOT run "go run gws.go" Because the Go files have been split up, this command will not work.    
 In your preferred browser, navigate to localhost:8080. Alternatively, navigate to localhost:8080/help for a list of possible API calls.  
 
 ## Sources:  

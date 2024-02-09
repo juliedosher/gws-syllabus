@@ -14,9 +14,16 @@ func main() {
 	http.HandleFunc("/hello-world", helloWorld)
 	http.HandleFunc("/hello-world-json", helloWorldJson)
 	http.HandleFunc("/syllabi", readAllSyllabi)
+
 	http.HandleFunc("/read", func(w http.ResponseWriter, r *http.Request) {
 		id := r.URL.Query().Get("id")
-		fmt.Fprintf(w, "ID: %v", id)
+		if syllabus, ok := getSyllabusFromId(id); ok {
+			syllabusStr, _ := json.MarshalIndent(syllabus, "", "    ")
+			fmt.Fprintf(w, string(syllabusStr))
+
+		} else {
+			fmt.Fprintf(w, "Syllabus with ID %v not found", id)
+		}
 	})
 
 	http.HandleFunc("/hello-world-html", func(w http.ResponseWriter, r *http.Request) {
@@ -60,4 +67,18 @@ func readAllSyllabi(w http.ResponseWriter, r *http.Request) {
 
 func readSyllabus(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, strconv.Itoa(len(syllabi)))
+}
+
+func getSyllabusFromId(id string) (Syllabus, bool) {
+	idNum, err := strconv.Atoi(id)
+	if err != nil {
+		return Syllabus{}, false
+	}
+
+	for _, syllabus := range syllabi {
+		if syllabus.ID == idNum {
+			return syllabus, true
+		}
+	}
+	return Syllabus{}, false
 }

@@ -1,0 +1,17 @@
+[
+	{
+		"id": 1,
+		"name": "Eric Pogue", 
+		"lewisEmail": "epogue@lewisu.edu"
+	},
+	{
+		"id": 2,
+		"name": "Cynthia Howard",
+		"lewisEmail": "howardcy@lewisu.edu"
+	},
+	{
+		"id": 3,
+		"name": "Ray Klump",
+		"lewisEmail": "klumpra@lewisu.edu"
+	}
+]

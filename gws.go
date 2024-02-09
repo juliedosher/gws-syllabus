@@ -29,7 +29,7 @@ func main() {
 	http.HandleFunc("/delete", func(w http.ResponseWriter, r *http.Request) {
 		id := r.URL.Query().Get("id")
 		if syllabus, ok := getSyllabusFromId(id); ok {
-			fmt.Fprintf(w, "Delete request -- stubbed")
+			fmt.Fprintf(w, "Delete request – stubbed")
 			fmt.Fprintf(w, "\nSyllabus to be deleted:\n")
 			syllabusStr, _ := json.MarshalIndent(syllabus, "", "    ")
 			fmt.Fprintf(w, string(syllabusStr))
@@ -42,7 +42,7 @@ func main() {
 	http.HandleFunc("/update", func(w http.ResponseWriter, r *http.Request) {
 		id := r.URL.Query().Get("id")
 		if syllabus, ok := getSyllabusFromId(id); ok {
-			fmt.Fprintf(w, "Update request -- stubbed")
+			fmt.Fprintf(w, "Update request – stubbed")
 			fmt.Fprintf(w, "\nSyllabus to be updated:\n")
 			syllabusStr, _ := json.MarshalIndent(syllabus, "", "    ")
 			fmt.Fprintf(w, string(syllabusStr))
@@ -61,7 +61,7 @@ func main() {
 			fmt.Fprintf(w, "Syllabus with ID ‘%v’ already exists", id)
 
 		} else {
-			fmt.Fprintf(w, "Create request -- stubbed")
+			fmt.Fprintf(w, "Create request – stubbed")
 		}
 	})
 

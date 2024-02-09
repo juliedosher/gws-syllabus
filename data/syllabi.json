@@ -1,0 +1,57 @@
+[
+	{
+		"id": "sp24-cpsc-20000-002",
+		"section": "002",
+		"crn": "11319",
+		"meetingDays": "MWF",
+		"meetingTimes": "1-1:50 pm",
+		"finalExam": "Wednesday, May 8 from 1:30 to 3:30 PM CT",
+		"meetingLocation": "Arts and Sciences (AS) 104A and Friday remote via Zoom",
+		"course": {
+		  "name": "Introduction to Computer Science",
+		  "id": "cpsc-20000",
+		  "number": 20000,
+		  "creditHours": 3,
+		  "description": "This course explores the field of computer science. It provides an overview of computer architecture, networking, data organization, and computational theory. Students will be introduced to fundamental concepts underlying all of computing, such as algorithms, abstractions, and how computers represent numbers, text, images, and sound. Students will learn the basics of programming and computational problem solving.",
+		  "prerequisites": "none",
+		  "learningOutcomes": [
+			"Use abstraction to simplify a problem to its essential elements",
+			"Develop algorithms to describe that solve a problem step-by-step",
+			"Write computer programs to implement algorithms using sequence, selection, and repetition",
+			"Identify the parts of a computer and explain how each is involved in processing a computer program",
+			"Represent data the way a computer program would using binary and hexadecimal representations",
+			"Demonstrate how transistors and logical operations allow a computer execute a computer program",
+			"Research seminal works in computer science and describe their relevance",
+			"Explain how computer networks communicate data across and between networks",
+			"Explain computer security and how encryption and hashing protect our networks and online privacy",
+			"Utilize multiple computer programming tools and paradigms to create computer programs"
+		  ],
+		  "programOutcomes": [
+			{"value": 1, "outcome": "develop programs using languages having different programming tools and paradigms"},
+			{"value": 2, "outcome": "select the most appropriate tools, data structures, and algorithms for the given problem"},
+			{"value": 4, "outcome": "describe how computer systems can communicate securely with each other and form networks"},
+			{"value": 7, "outcome": "explain how programming languages are designed and implemented"}
+		  ],
+		  "baccalaureateCharacteristics": [
+			{"value": 1, "outcome": "Essential Skills"},
+			{"value": 2, "outcome": "Major Approaches to Knowledge"},
+			{"value": 6, "outcome": "Critical Thinking"},
+			{"value": 7, "outcome": "Lifelong Learning"}
+		  ],
+		  "textBook": "Computer Science Illuminated, Nell Dale and John Lewis, Jones & Bartlett Learning. This book is required for this course.",
+		  "modules": [
+			"HyperText Markup Language (HTML), Tools of the Trade, and Files and File Systems",
+			"Cascading Style Sheets (CSS), The Big Picture, and Numbering Systems",
+			"JavaScript, Data Representation, and Gates & Circuits",
+			"More JavaScript, Circuits, and Computing Components",
+			"Python, Class Project Proposal, Sequences, Selections, and Loops, Networks, The Internet, and The World Wide Web",
+			"More Python, Update Class Project Proposal, Artificial Intelligence, and Machine Learning",
+			"Class Project, Cloud Computing, and Information Security",
+			"Class Project Presentation"
+		  ]
+		},
+		"instructor": "Placeholder for Instructor Eric Pogue details",
+		"calendar": "Placeholder for Calendar Spring 2024 details"
+	}
+ 
+]

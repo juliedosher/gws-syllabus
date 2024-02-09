@@ -8,6 +8,8 @@ import (
 	"strconv"
 )
 
+// ID: sp24-cpsc-20000-002
+
 func main() {
 	json.Unmarshal(jsonFile, &syllabi)
 
@@ -30,7 +32,7 @@ func main() {
 		id := r.URL.Query().Get("id")
 		if syllabus, ok := getSyllabusFromId(id); ok {
 			fmt.Fprintf(w, "Delete request – stubbed")
-			fmt.Fprintf(w, "\nSyllabus to be deleted:\n")
+			fmt.Fprintf(w, "\n\nSyllabus to be deleted:\n\n")
 			syllabusStr, _ := json.MarshalIndent(syllabus, "", "    ")
 			fmt.Fprintf(w, string(syllabusStr))
 
@@ -43,7 +45,7 @@ func main() {
 		id := r.URL.Query().Get("id")
 		if syllabus, ok := getSyllabusFromId(id); ok {
 			fmt.Fprintf(w, "Update request – stubbed")
-			fmt.Fprintf(w, "\nSyllabus to be updated:\n")
+			fmt.Fprintf(w, "\n\nSyllabus to be updated:\n\n")
 			syllabusStr, _ := json.MarshalIndent(syllabus, "", "    ")
 			fmt.Fprintf(w, string(syllabusStr))
 
@@ -54,14 +56,12 @@ func main() {
 
 	http.HandleFunc("/create", func(w http.ResponseWriter, r *http.Request) {
 		id := r.URL.Query().Get("id")
-		if _, err := strconv.Atoi(id); err != nil {
-			fmt.Fprintf(w, "Invalid ID provided. Please enter an integer.")
-
-		} else if _, ok := getSyllabusFromId(id); ok {
+		if _, ok := getSyllabusFromId(id); ok {
 			fmt.Fprintf(w, "Syllabus with ID ‘%v’ already exists", id)
 
 		} else {
 			fmt.Fprintf(w, "Create request – stubbed")
+			fmt.Fprintf(w, "\nSyllabus to be created: %v", id)
 		}
 	})
 
@@ -90,13 +90,7 @@ func helloWorldJson(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, `{“message” : ”Hello World - GWS”}`)
 }
 
-type Syllabus struct {
-	ID    int    `json:"id"`
-	Name  string `json:"name"`
-	Email string `json:"lewisEmail"`
-}
-
-//go:embed data/all.json
+//go:embed data/syllabi.json
 var jsonFile []byte
 var syllabi []Syllabus
 
@@ -109,13 +103,8 @@ func readSyllabus(w http.ResponseWriter, r *http.Request) {
 }
 
 func getSyllabusFromId(id string) (Syllabus, bool) {
-	idNum, err := strconv.Atoi(id)
-	if err != nil {
-		return Syllabus{}, false
-	}
-
 	for _, syllabus := range syllabi {
-		if syllabus.ID == idNum {
+		if syllabus.ID == id {
 			return syllabus, true
 		}
 	}

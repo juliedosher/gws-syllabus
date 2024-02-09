@@ -26,6 +26,45 @@ func main() {
 		}
 	})
 
+	http.HandleFunc("/delete", func(w http.ResponseWriter, r *http.Request) {
+		id := r.URL.Query().Get("id")
+		if syllabus, ok := getSyllabusFromId(id); ok {
+			fmt.Fprintf(w, "Delete request -- stubbed")
+			fmt.Fprintf(w, "\nSyllabus to be deleted:\n")
+			syllabusStr, _ := json.MarshalIndent(syllabus, "", "    ")
+			fmt.Fprintf(w, string(syllabusStr))
+
+		} else {
+			fmt.Fprintf(w, "Syllabus with ID %v not found", id)
+		}
+	})
+
+	http.HandleFunc("/update", func(w http.ResponseWriter, r *http.Request) {
+		id := r.URL.Query().Get("id")
+		if syllabus, ok := getSyllabusFromId(id); ok {
+			fmt.Fprintf(w, "Update request -- stubbed")
+			fmt.Fprintf(w, "\nSyllabus to be updated:\n")
+			syllabusStr, _ := json.MarshalIndent(syllabus, "", "    ")
+			fmt.Fprintf(w, string(syllabusStr))
+
+		} else {
+			fmt.Fprintf(w, "Syllabus with ID %v not found", id)
+		}
+	})
+
+	http.HandleFunc("/create", func(w http.ResponseWriter, r *http.Request) {
+		id := r.URL.Query().Get("id")
+		if _, err := strconv.Atoi(id); err != nil {
+			fmt.Fprintf(w, "Invalid ID provided. Please enter an integer.")
+
+		} else if _, ok := getSyllabusFromId(id); ok {
+			fmt.Fprintf(w, "Syllabus with ID %v already exists", id)
+
+		} else {
+			fmt.Fprintf(w, "Create request -- stubbed")
+		}
+	})
+
 	http.HandleFunc("/hello-world-html", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "index.html")
 	})
